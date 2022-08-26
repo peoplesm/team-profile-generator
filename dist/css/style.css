@@ -1,0 +1,23 @@
+header {
+  background-color: rgb(10, 87, 36);
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: solid black 3px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 5px;
+}
+
+.card-header {
+  background-color: rgb(10, 87, 36);
+  color: white;
+}
