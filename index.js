@@ -13,7 +13,7 @@ const Intern = require("./lib/intern");
 //Team Array
 const teamArr = [];
 
-//Inquirer Questions
+//Manager Questions
 const addManager = () => {
   return inquirer
     .prompt([
@@ -70,15 +70,27 @@ const addManager = () => {
           }
         },
       },
+      {
+        type: "confirm",
+        name: "confirmAddEmp",
+        message: "Would you like to add more team memebers?",
+        default: false,
+      },
     ])
     .then((managerData) => {
-      const { name, id, email, officeNumber } = managerData;
+      const { name, id, email, officeNumber, confirmAddEmp } = managerData;
       const manager = new Manager(name, id, email, officeNumber);
       teamArr.push(manager);
-      console.log(manager);
+      // console.log(manager);
+      if (confirmAddEmp) {
+        return addEmployee(teamArr);
+      } else {
+        return teamArr;
+      }
     });
 };
 
+//Employee questions
 const addEmployee = () => {
   return inquirer
     .prompt([
@@ -168,10 +180,10 @@ const addEmployee = () => {
       let employee = {};
       if (role === "Engineer") {
         employee = new Engineer(name, id, email, github);
-        console.log(employee);
+        // console.log(employee);
       } else if (role === "Intern") {
         employee = new Intern(name, id, email, school);
-        console.log(employee);
+        // console.log(employee);
       }
       teamArr.push(employee);
 
@@ -197,8 +209,8 @@ const writeFile = (data) => {
   });
 };
 
+//Init and final promises to return HTML page
 addManager()
-  .then(addEmployee)
   .then((teamArr) => {
     return generateHTML(teamArr);
   })

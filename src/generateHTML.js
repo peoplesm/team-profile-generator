@@ -1,3 +1,4 @@
+//Fxns to generate card based on role
 function createManager(manager) {
   return `<div class="card" style="width: 18rem">
   <div class="card-body card-header">
@@ -46,11 +47,15 @@ function createIntern(intern) {
 </div>`;
 }
 
+//Fxn to determine which card to generate based on the employee's role
 function generateHTML(teamArr) {
+  //Array of HTML strings from the generated cards
   docArr = [];
   for (let i = 0; i < teamArr.length; i++) {
     const emp = teamArr[i];
+    // console.log(emp);
     const role = emp.getRole();
+    // console.log(role);
     if (role === "Manager") {
       const managerCard = createManager(emp);
       docArr.push(managerCard);
@@ -67,6 +72,7 @@ function generateHTML(teamArr) {
   return generateDoc;
 }
 
+//HTML Template for generated team roster
 function generateDocPage(empCards) {
   return `<!DOCTYPE html>
   <html lang="en">
@@ -101,4 +107,5 @@ function generateDocPage(empCards) {
   `;
 }
 
+//Export so index.js can use generateHTML fxn
 module.exports = generateHTML;
