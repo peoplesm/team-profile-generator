@@ -39,7 +39,7 @@ Allows a team leader to input employee data and generate an interactive roster a
 
 ## Video of App
 
-[Video of App Demonstration](https://drive.google.com/file/d/1toajeKmCXxHGxAkWs5hQLMNHqwjKd-2B/view)
+[Video of App Demonstration](https://drive.google.com/file/d/1DuQGIJZT7-US9FrX6MZXUg5ficqwyKI5/view?usp=sharing)
 
 ## Sample HTML Page Created in Video
 
