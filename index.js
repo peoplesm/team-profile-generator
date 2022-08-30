@@ -73,7 +73,7 @@ const addManager = () => {
       {
         type: "confirm",
         name: "confirmAddEmp",
-        message: "Would you like to add more team memebers?",
+        message: "Would you like to add more team members?",
         default: false,
       },
     ])
@@ -103,7 +103,7 @@ const addEmployee = () => {
       {
         type: "input",
         name: "name",
-        message: "What is this team member's name?",
+        message: "What is this team member's full name?",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
